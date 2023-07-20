@@ -31,11 +31,11 @@ function fetchBooks() {
     });
 }
 
-// Function to render the books (assuming it exists in your code)
+// Function to render the books 
 function renderBooks(data) {
   // Assuming the 'data' is an array of books
   data.forEach((book) => {
-    console.log(book.name); // You can modify this line to display the books in the webpage
+    console.log(book.name); 
   });
 }
 
