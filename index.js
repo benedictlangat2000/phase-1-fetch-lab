@@ -15,3 +15,29 @@ function renderBooks(books) {
 document.addEventListener('DOMContentLoaded', function() {
   fetchBooks();
 });
+// Function to fetch data from the Game of Thrones API and render the books
+function fetchBooks() {
+  const apiEndpoint = 'https://anapioficeandfire.com/api/books';
+
+  // Make a fetch request to the API
+  return fetch(apiEndpoint)
+    .then((resp) => resp.json())
+    .then((json) => {
+      // Call the renderBooks() function and pass the JSON data as an argument
+      renderBooks(json);
+    })
+    .catch((error) => {
+      console.error('Error fetching data:', error);
+    });
+}
+
+// Function to render the books (assuming it exists in your code)
+function renderBooks(data) {
+  // Assuming the 'data' is an array of books
+  data.forEach((book) => {
+    console.log(book.name); // You can modify this line to display the books in the webpage
+  });
+}
+
+// Call fetchBooks() when index.html is loaded
+fetchBooks();
